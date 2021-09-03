@@ -858,7 +858,9 @@
 	Owl.prototype.onDragEnd = function(event) {
 		var delta = this.difference(this._drag.pointer, this.pointer(event)),
 			stage = this._drag.stage.current,
-			direction = delta.x > 0 ^ this.settings.rtl ? 'left' : 'right';
+			//direction = delta.x > 0 ^ this.settings.rtl ? 'left' : 'right';
+		        // fix https://github.com/OwlCarousel2/OwlCarousel2/issues/1771
+			direction = 'left';
 
 		$(document).off('.owl.core');
 
